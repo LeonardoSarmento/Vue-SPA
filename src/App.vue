@@ -3,10 +3,13 @@
       :pages="pages" 
       :active-page="activePage"
     ></navbar>
-    <page-viewer v-if="pages.length > 0" :page="pages[activePage]"></page-viewer>
+
+    <router-view></router-view>
+
+    <!-- <page-viewer v-if="pages.length > 0" :page="pages[activePage]"></page-viewer>
     <create-page 
       @page-created="pageCreated"
-    ></create-page>
+    ></create-page> -->
 
 </template>
 
