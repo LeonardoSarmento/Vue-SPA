@@ -7,10 +7,15 @@
                     v-for="(page, index) in publishedPages" class="nav-item" :key="index"
                     :page="page"
                     :index="index"
-                    :isActive="activePage == index"
-                    @click.prevent="$emit('actived')"
-                    >
-                    </navbar-link>
+                    ></navbar-link>
+                <li>
+                    <router-link 
+                    to="/create"
+                    class="nav-link"
+                    active-class="active"
+                    aria-current="page"         
+                    >Create Page</router-link>            
+                </li>
             </ul>
             <form class="d-flex">
                 <button class="btn btn-primary" @click.prevent="changeTheme()">
@@ -31,7 +36,7 @@ export default {
     created() {
         this.getThemeSetting()
     },
-    props: ['pages', 'activePage'],
+    props: ['pages'],
         data() {
         return {
             theme: 'dark'
